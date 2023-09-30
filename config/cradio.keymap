@@ -84,7 +84,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
-    }
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -128,5 +128,5 @@
                          &kp BACKSPACE_DELETE &none              &kp SPACE_ENTER &none
             >;
         };
-  };
+    };
 };
