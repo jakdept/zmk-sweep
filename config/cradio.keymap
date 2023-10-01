@@ -92,7 +92,7 @@
             bindings = <&kp QMARK>, <&kp SLASH>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_RSFT)>;
-        }
+        };
     };
 
     keymap {
