@@ -44,7 +44,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_COMMA";
             #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp ENTER>;
+            bindings = <&kp KP_DOT>, <&kp KP_COMMA>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
