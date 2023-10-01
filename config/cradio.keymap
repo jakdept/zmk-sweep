@@ -40,7 +40,7 @@
             keep-mods = <(MOD_RSFT)>;
         };
 
-        dot_comma: period_comma {
+        dot_comma: dot_comma {
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_COMMA";
             #binding-cells = <0>;
