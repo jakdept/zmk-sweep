@@ -13,10 +13,10 @@
     #define BOTH_LAYER 3
 // -----------------
 
-&mt {
+// &mt {
    //  flavor = "tap-preferred";
    // tapping_term_ms = <200>;
-};
+// };
 
 / {
     behaviors {
