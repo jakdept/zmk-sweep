@@ -121,7 +121,7 @@
         // Main modifiers and arrow keys
         right_layer {
             bindings = <
-            &kp Q            &kp W &kp E &kp R &kp T        &kp N6        &kp N7    &kp N8   &kp N9_MINUS  &kp N0_UNDER
+            &kp Q            &kp W &kp E &kp R &kp T        &kp N6        &kp N7    &kp N8   &nine_minus  &zero_under
             &kp A            &kp S &kp D &kp F &kp G        &kp LEFT      &kp DOWN  &kp UP   &kp RIGHT &kp SINGLE_QUOTE
             &mt LSHFT QMARK &kp Z &kp X &kp C &kp V        &kp BACKSLASH &kp RCMD  &kp RALT &kp RCTRL &mt RSHIFT KP_SLASH
               &bck_del &lt BOTH_LAYER ESCAPE                &spc_ent &none
@@ -131,7 +131,7 @@
         // holding both thumb keys
         both_layer {
             bindings = <
-            &kp N1    &kp N2    &kp N3   &kp N4   &kp N5                   &kp N6        &kp N7    &kp N8   &kp N9_MINUS  &kp N0_UNDER
+            &kp N1    &kp N2    &kp N3   &kp N4   &kp N5                   &kp N6        &kp N7    &kp N8   &nine_minus &zero_under
             &kp LBKT  &kp RBKT  &kp L_PAR_ANG &kp R_PAR_ANG &kp EQUAL      &kp LEFT      &kp DOWN  &kp UP   &kp RIGHT &kp SINGLE_QUOTE
             &mt LSHFT QMARK &kp LCTRL &kp LALT &kp LCMD &kp GRAVE          &kp BACKSLASH &kp RCMD  &kp RALT &kp RCTRL &mt RSHIFT KP_SLASH
                                                   &bck_del &none           &spc_ent &none
