@@ -22,7 +22,7 @@
 
 / {
     behaviors {
-        bspc_del: backspace_delete {
+        bck_del: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             label = "BACKSPACE_DELETE";
             #binding-cells = <0>;
@@ -67,7 +67,7 @@
             keep-mods = <(MOD_RSFT)>;
         };
 
-        left_parens_angle: left_parens_angle {
+        l_par_ang: left_parens_angle {
             compatible = "zmk,behavior-mod-morph";
             label = "L_PAR_ANG";
             #binding-cells = <0>;
@@ -76,7 +76,7 @@
             keep-mods = <(MOD_RSFT)>;
         };
 
-        right_parens_angle: right_parens_angle {
+        r_par_ang: right_parens_angle {
             compatible = "zmk,behavior-mod-morph";
             label = "R_PAR_ANG";
             #binding-cells = <0>;
@@ -84,6 +84,15 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
+
+        qmark_slash: question_mark_slash {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QMARK_SLASH";
+            #binding-cells = <0>;
+            bindings = <&kp QMARK>, <&kp SLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        }
     };
 
     keymap {
@@ -94,8 +103,8 @@
             bindings = <
             &kp Q            &kp W &kp E &kp R &kp T         &kp Y &kp U &kp I &kp O      &kp P 
             &kp A            &kp S &kp D &kp F &kp G         &kp H &kp J &kp K &kp L      &kp SEMICOLON
-            &mt LSHIFT QMARK &kp Z &kp X &kp C &kp V         &kp B &kp N &kp M &kp DOT_COMMA &mt RSHIFT KP_SLASH
-              &kp BACKSPACE_DELETE &lt LEFT_LAYER ESCAPE           &kp SPACE_ENTER &lt RIGHT_LAYER TAB
+            &mt LSHIFT QMARK &kp Z &kp X &kp C &kp V         &kp B &kp N &kp M &dot_comma &mt RSHIFT KP_SLASH
+              &bck_del &lt LEFT_LAYER ESCAPE           &spc_ent &lt RIGHT_LAYER TAB
             >;
         };
 
@@ -103,9 +112,9 @@
         left_layer {
             bindings = <
             &kp N1    &kp N2    &kp N3   &kp N4   &kp N5                 &kp Y &kp U &kp I &kp O      &kp P 
-            &kp LBKT  &kp RBKT  &kp L_PAR_ANG &kp R_PAR_ANG &kp EQUAL    &kp H &kp J &kp K &kp L      &kp SEMICOLON
-            &mt LSHFT QMARK &kp LCTRL &kp LALT &kp LCMD &kp GRAVE        &kp B &kp N &kp M &kp DOT_COMMA &mt RSHIFT KP_SLASH
-                         &kp BACKSPACE_DELETE &none                       &kp SPACE_ENTER &lt BOTH_LAYER TAB                             
+            &kp LBKT  &kp RBKT  &l_par_ang &r_par_ang &kp EQUAL    &kp H &kp J &kp K &kp L      &kp SEMICOLON
+            &mt LSHFT QMARK &kp LCTRL &kp LALT &kp LCMD &kp GRAVE        &kp B &kp N &kp M &dot_comma &mt RSHIFT KP_SLASH
+                                    &bck_del &none                       &spc_ent &lt BOTH_LAYER TAB                             
             >;
         };
 
@@ -114,8 +123,8 @@
             bindings = <
             &kp Q            &kp W &kp E &kp R &kp T        &kp N6        &kp N7    &kp N8   &kp N9_MINUS  &kp N0_UNDER
             &kp A            &kp S &kp D &kp F &kp G        &kp LEFT      &kp DOWN  &kp UP   &kp RIGHT &kp SINGLE_QUOTE
-            &mt LSHIFT QMARK &kp Z &kp X &kp C &kp V        &kp BACKSLASH &kp RCMD  &kp RALT &kp RCTRL &mt RSHIFT KP_SLASH
-              &kp BACKSPACE_DELETE &lt BOTH                   &kp SPACE_ENTER &none
+            &mt LSHFT QMARK &kp Z &kp X &kp C &kp V        &kp BACKSLASH &kp RCMD  &kp RALT &kp RCTRL &mt RSHIFT KP_SLASH
+              &bck_del &lt BOTH_LAYER ESCAPE                &spc_ent &none
             >;
         };
 
@@ -124,8 +133,8 @@
             bindings = <
             &kp N1    &kp N2    &kp N3   &kp N4   &kp N5                   &kp N6        &kp N7    &kp N8   &kp N9_MINUS  &kp N0_UNDER
             &kp LBKT  &kp RBKT  &kp L_PAR_ANG &kp R_PAR_ANG &kp EQUAL      &kp LEFT      &kp DOWN  &kp UP   &kp RIGHT &kp SINGLE_QUOTE
-            &mt LSHFT QMARK &kp LCTRL &kp LALT &kp LCMD &kp GRAVE                &kp BACKSLASH &kp RCMD  &kp RALT &kp RCTRL &mt RSHIFT KP_SLASH
-                         &kp BACKSPACE_DELETE &none              &kp SPACE_ENTER &none
+            &mt LSHFT QMARK &kp LCTRL &kp LALT &kp LCMD &kp GRAVE          &kp BACKSLASH &kp RCMD  &kp RALT &kp RCTRL &mt RSHIFT KP_SLASH
+                                                  &bck_del &none           &spc_ent &none
             >;
         };
     };

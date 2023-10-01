@@ -1,0 +1,131 @@
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    behaviors {
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE";
+            #binding-cells = <0>;
+            bindings =
+                <&kp BACKSPACE>,
+                <&kp DELETE>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        spc_ent: space_enter {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPACE_ENTER";
+            #binding-cells = <0>;
+            bindings =
+                <&kp SPACE>,
+                <&kp ENTER>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        dot_comma: period_comma {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_COMMA";
+            #binding-cells = <0>;
+            bindings =
+                <&kp SPACE>,
+                <&kp ENTER>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        nine_minus: nine_minus {
+            compatible = "zmk,behavior-mod-morph";
+            label = "N9_MINUS";
+            #binding-cells = <0>;
+            bindings =
+                <&kp KP_NUMBER_9>,
+                <&kp KP_MINUS>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        zero_under: zero_under {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ZERO_UNDER";
+            #binding-cells = <0>;
+            bindings =
+                <&kp KP_NUMBER_0>,
+                <&kp UNDERSCORE>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        l_par_ang: left_parans_angle {
+            compatible = "zmk,behavior-mod-morph";
+            label = "L_PAR_ANG";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_PARENTHESIS>,
+                <&kp LESS_THAN>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        r_par_ang: right_parens_angle {
+            compatible = "zmk,behavior-mod-morph";
+            label = "R_PAR_ANG";
+            #binding-cells = <0>;
+            bindings =
+                <&kp RIGHT_PARENTHESIS>,
+                <&kp GREATER_THAN>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        // Base alpha layer
+
+        default_layer {
+            bindings = <
+&kp Q             &kp W  &kp E  &kp R      &kp T                    &kp Y     &kp U                &kp I  &kp O       &kp P
+&kp A             &kp S  &kp D  &kp F      &kp G                    &kp H     &kp J                &kp K  &kp L       &kp SEMICOLON
+&mt LSHIFT QMARK  &kp Z  &kp X  &kp C      &kp V                    &kp B     &kp N                &kp M  &dot_comma  &mt RSHIFT KP_SLASH
+                                &bspc_del  &lt LEFT_LAYER ESCAPE    &spc_ent  &lt RIGHT_LAYER TAB
+            >;
+        };
+
+        // Numbers and high frequency symbols
+
+        left_layer {
+            bindings = <
+&kp N1           &kp N2     &kp N3      &kp N4      &kp N5       &kp Y     &kp U               &kp I  &kp O       &kp P
+&kp LBKT         &kp RBKT   &l_par_ang  &r_par_ang  &kp EQUAL    &kp H     &kp J               &kp K  &kp L       &kp SEMICOLON
+&mt LSHFT QMARK  &kp LCTRL  &kp LALT    &kp LCMD    &kp GRAVE    &kp B     &kp N               &kp M  &dot_comma  &mt RSHIFT KP_SLASH
+                                        &bspc_del   &none        &spc_ent  &lt BOTH_LAYER TAB
+            >;
+        };
+
+        // Main modifiers and arrow keys
+
+        right_layer {
+            bindings = <
+&kp Q             &kp W  &kp E  &kp R      &kp T           &kp N6         &kp N7    &kp N8    &nine_minus  &zero_under
+&kp A             &kp S  &kp D  &kp F      &kp G           &kp LEFT       &kp DOWN  &kp UP    &kp RIGHT    &kp SINGLE_QUOTE
+&mt LSHIFT QMARK  &kp Z  &kp X  &kp C      &kp V           &kp BACKSLASH  &kp RCMD  &kp RALT  &kp RCTRL    &mt RSHIFT KP_SLASH
+                                &bspc_del  &lt 3 ESCAPE    &spc_ent       &none
+            >;
+        };
+
+        // holding both thumb keys
+
+        both_layer {
+            bindings = <
+&kp N1           &kp N2     &kp N3      &kp N4      &kp N5       &kp N6         &kp N7    &kp N8    &nine_minus  &zero_under
+&kp LBKT         &kp RBKT   &l_par_ang  &r_par_ang  &kp EQUAL    &kp LEFT       &kp DOWN  &kp UP    &kp RIGHT    &kp SINGLE_QUOTE
+&mt LSHFT QMARK  &kp LCTRL  &kp LALT    &kp LCMD    &kp GRAVE    &kp BACKSLASH  &kp RCMD  &kp RALT  &kp RCTRL    &mt RSHIFT KP_SLASH
+                                        &bspc_del   &none        &spc_ent       &none
+            >;
+        };
+    };
+};
