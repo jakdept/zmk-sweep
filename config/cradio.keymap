@@ -4,9 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 
 // Layer definitions
     #define BASE 0
@@ -104,7 +102,7 @@
             &kp Q            &kp W &kp E &kp R &kp T         &kp Y &kp U &kp I &kp O      &kp P 
             &kp A            &kp S &kp D &kp F &kp G         &kp H &kp J &kp K &kp L      &kp SEMICOLON
             &mt LSHIFT QMARK &kp Z &kp X &kp C &kp V         &kp B &kp N &kp M &dot_comma &mt RSHIFT KP_SLASH
-              &bck_del &lt LEFT_LAYER ESCAPE           &spc_ent &lt RIGHT_LAYER TAB
+              &bck_del &lt LEFT_LAYER ESCAPE                 &lt RIGHT_LAYER TAB &spc_ent
             >;
         };
 
@@ -114,17 +112,17 @@
             &kp N1    &kp N2    &kp N3   &kp N4   &kp N5                 &kp Y &kp U &kp I &kp O      &kp P 
             &kp LBKT  &kp RBKT  &l_par_ang &r_par_ang &kp EQUAL          &kp H &kp J &kp K &kp L      &kp SEMICOLON
             &mt LSHFT QMARK &kp LCTRL &kp LALT &kp LCMD &kp GRAVE        &kp B &kp N &kp M &dot_comma &mt RSHIFT KP_SLASH
-                                    &bck_del &none                       &spc_ent &lt BOTH_LAYER TAB                             
+                                    &bck_del &none                       &lt BOTH_LAYER TAB  &spc_ent
             >;
         };
 
         // Main modifiers and arrow keys
         right_layer {
             bindings = <
-            &kp Q            &kp W &kp E &kp R &kp T        &kp N6        &kp N7    &kp N8   &nine_minus  &zero_under
-            &kp A            &kp S &kp D &kp F &kp G        &kp LEFT      &kp DOWN  &kp UP   &kp RIGHT &kp SINGLE_QUOTE
+            &kp Q            &kp W &kp E &kp R &kp T       &kp N6        &kp N7    &kp N8   &nine_minus  &zero_under
+            &kp A            &kp S &kp D &kp F &kp G       &kp LEFT      &kp DOWN  &kp UP   &kp RIGHT &kp SINGLE_QUOTE
             &mt LSHFT QMARK &kp Z &kp X &kp C &kp V        &kp BACKSLASH &kp RCMD  &kp RALT &kp RCTRL &mt RSHIFT KP_SLASH
-              &bck_del &lt BOTH_LAYER ESCAPE                &spc_ent &none
+              &bck_del &lt BOTH_LAYER ESCAPE               &none  &spc_ent
             >;
         };
 
@@ -134,7 +132,7 @@
             &kp N1    &kp N2    &kp N3   &kp N4   &kp N5                   &kp N6        &kp N7    &kp N8   &nine_minus &zero_under
             &kp LBKT  &kp RBKT  &l_par_ang &r_par_ang &kp EQUAL            &kp LEFT      &kp DOWN  &kp UP   &kp RIGHT &kp SINGLE_QUOTE
             &mt LSHFT QMARK &kp LCTRL &kp LALT &kp LCMD &kp GRAVE          &kp BACKSLASH &kp RCMD  &kp RALT &kp RCTRL &mt RSHIFT KP_SLASH
-                                                  &bck_del &none           &spc_ent &none
+                                                  &bck_del &none           &none &spc_ent
             >;
         };
     };
